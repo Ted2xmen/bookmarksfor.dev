@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  color: white;
+  background-color: black;
+    /* @apply  bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r */
+}
+
+
+.title {
+  @apply text-[16px] text-slate-300
+}
+
+.domain {
+  @apply text-xs text-slate-400
+}
