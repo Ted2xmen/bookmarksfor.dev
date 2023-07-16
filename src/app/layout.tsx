@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import Head from "next/head";
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import { Analytics } from "@vercel/analytics/react";
+
 
 const roboto = Roboto({ subsets: ["latin"], weight: "500" });
 
@@ -44,6 +46,7 @@ export default function RootLayout({
         <footer className="flex justify-center">
           <Footer />
         </footer>
+        <Analytics />
       </body>
     </html>
   );

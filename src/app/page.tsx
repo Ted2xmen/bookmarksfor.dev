@@ -5,6 +5,7 @@ async function getData() {
     headers: {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_RAINDROP_KEY}`,
     },
+    next: { revalidate: 1000 },
   };
   const collectionIds = [35861134, 35861132, 35861131, 35861130, 35904862];
   const results = [];
