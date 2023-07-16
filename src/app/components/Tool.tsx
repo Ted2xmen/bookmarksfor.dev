@@ -6,6 +6,7 @@ const Tool = ({ data, idx }: any) => {
       <img
         alt={data.title}
         src={data.cover}
+        
         className="h-44 w-full object-cover"
       />
 

@@ -21,7 +21,7 @@ const Footer = () => {
           curated by
         </span>
         <a
-          className="font-bold font-sans bg-gradient-to-r  from-slate-200 via-slate-100 to-slate-400 text-black p-1 rounded-lg"
+          className="font-bold font-sans bg-gradient-to-r from-slate-200 via-slate-100 to-slate-400 text-black p-1 rounded-lg"
           href="https://ted2xmen.dev/?ref=bookmarksfor-dev"
           target="_blank"
           rel="noopener"

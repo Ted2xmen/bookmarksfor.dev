@@ -19,9 +19,9 @@ const Navbar = () => {
       <Link href="https://github.com/Ted2xmen/bookmarksfor">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="icon icon-tabler icon-tabler-brand-github"
-          width="28"
-          height="28"
+          className="icon icon-tabler rounded-md border p-1 icon-tabler-brand-github"
+          width="40"
+          height="40"
           viewBox="0 0 24 24"
           stroke-width="1"
           stroke="currentColor"

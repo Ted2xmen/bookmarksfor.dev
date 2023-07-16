@@ -13,5 +13,5 @@ body {
 }
 
 .domain {
-  @apply text-xs text-sky-600 underline cursor-pointer
+  @apply text-xs text-sky-500 hover:text-sky-200 underline cursor-pointer
 }

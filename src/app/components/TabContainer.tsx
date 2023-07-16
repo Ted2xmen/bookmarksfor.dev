@@ -5,22 +5,30 @@ import { Tab } from "@headlessui/react";
 import Card from "./Card";
 import Tool from "./Tool";
 
+type BookmarkItem = {
+  items: string;
+};
+type BookmarkProps = {
+  bookmarks: BookmarkItem[];
+};
+
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function TabContainer({ bookmarks }: any) {
+export default function TabContainer({ bookmarks }: BookmarkProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [modalData, setModalData] = useState<any>({}); // todo
-  
+
   useEffect(() => {
     dynamicColor();
-    setModalData({})
+    setModalData({});
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
   }, [selectedIndex]);
 
-  const dynamicColor = () => { // todo
+  const dynamicColor = () => {
+    // todo
     if (selectedIndex !== 4) {
       return "bg-gradient-to-r from-green-600 via-green-500 to-green-800";
     }
@@ -90,7 +98,7 @@ export default function TabContainer({ bookmarks }: any) {
         }}
       >
         <Tab.List
-          className={`flex space-x-1 rounded-xl my-8 p-2 transition-all ${dynamicColor()}`}
+          className={`flex space-x-1 overflow-hidden rounded-xl my-8 p-2 transition-all ${dynamicColor()}`}
         >
           {Object.keys(categories).map((category: any) => (
             <Tab
@@ -123,7 +131,13 @@ export default function TabContainer({ bookmarks }: any) {
               )}
             >
               <ul
-                className={`grid grid-cols-1 ${idx === 3 ? "md:grid-cols-3" : idx === 0 ? "md:grid-cols-2" : "md:grid-cols-1" }  gap-5`}
+                className={`grid grid-cols-1 ${
+                  idx === 3
+                    ? "md:grid-cols-3"
+                    : idx === 0
+                    ? "md:grid-cols-2"
+                    : "md:grid-cols-1"
+                }  gap-5`}
               >
                 {items.length > 0 ? (
                   <>
