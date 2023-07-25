@@ -14,7 +14,7 @@ const description =
   "Useful Articles and Tools for Javascript Developers - curated by Ted2xmen";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bookmarks.dev"),
+  metadataBase: new URL("https://bookmarksfor.dev"),
   themeColor: "black",
   alternates: {
     canonical: "/",
