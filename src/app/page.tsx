@@ -5,7 +5,6 @@ async function getData() {
     headers: {
       Authorization: `Bearer ${process.env.NEXT_PUBLIC_RAINDROP_KEY}`,
     },
-    next: { revalidate: 1000 },
   };
   const collectionIds = [35861134, 35861132, 35861131, 35861130, 35904862];
   const results = [];
@@ -32,9 +31,9 @@ const Home = async () => {
 
   return (
     <main className="flex flex-col items-center justify-between px-4 p-1">
-        <div className="flex w-full flex-col items-center justify-center font-sans">
-          <TabContainer bookmarks={bookmarks} />
-        </div>
+      <div className="flex w-full flex-col items-center justify-center font-sans">
+        <TabContainer bookmarks={bookmarks} />
+      </div>
     </main>
   );
 };
