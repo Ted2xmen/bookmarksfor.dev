@@ -38,7 +38,7 @@ const Card = ({ data, idx }: any) => {
         {idx !== 0 && (
           <div className="hidden md:block">
             <p className="text-sm text-slate-400 my-1">
-              {data.excerpt.slice(0, 120)}...
+              {/* {data?.excerpt.slice(0, 120)}... */}
             </p>
           </div>
         )}

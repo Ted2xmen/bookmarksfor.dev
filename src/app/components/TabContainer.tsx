@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Tab } from "@headlessui/react";
 import Card from "./Card";
 import Tool from "./Tool";
+import Book from "./Book";
 
 type BookmarkItem = {
   items: string;
@@ -23,13 +24,13 @@ export default function TabContainer({ bookmarks }: BookmarkProps) {
   useEffect(() => {
     dynamicColor();
     setModalData({});
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0;
+    // document.body.scrollTop = 0; // For Safari
+    // document.documentElement.scrollTop = 0;
   }, [selectedIndex]);
 
   const dynamicColor = () => {
     // todo
-    if (selectedIndex !== 4) {
+    if (selectedIndex !== 5) {
       return "bg-gradient-to-r from-green-600 via-green-500 to-green-800";
     }
   };
@@ -39,12 +40,14 @@ export default function TabContainer({ bookmarks }: BookmarkProps) {
   const advancedData = bookmarks[2].items;
   const basicsData = bookmarks[3].items;
   const toolsData = bookmarks[4].items;
+  const booksData = bookmarks[5].items;
 
   let [categories] = useState({
     General: generalData || [],
     Basics: basicsData || [],
     Advanced: advancedData || [],
     Tools: toolsData || [],
+    Books: booksData || [],
   });
 
   const dynamicLength = (category: string) => {
@@ -59,39 +62,25 @@ export default function TabContainer({ bookmarks }: BookmarkProps) {
         return frameworksData?.length;
       case "Tools":
         return toolsData?.length;
+      case "Books":
+        return booksData?.length;
     }
   };
 
-  const NoArticles = () => {
-    return (
-      <div className="flex flex-col items-center justify-around gap-5 py-5 text-slate-500">
-        No articles or tools
-        <svg
-          className="w-10 h-10"
-          viewBox="0 0 53 53"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M39.4 2L26.9 14.5L14.4 2L2 14.4L14.5 26.9L2 39.4L14.4 51.8L26.9 39.3L39.4 51.8L51.8 39.4L39.3 26.9L51.8 14.4L39.4 2Z"
-            stroke="currentColor"
-            stroke-width="1.5882"
-            stroke-miterlimit="10"
-          ></path>
-          <path
-            d="M39.4 2L26.9 14.5L14.4 2L2 14.4L14.5 26.9L2 39.4L14.4 51.8L26.9 39.3L39.4 51.8L51.8 39.4L39.3 26.9L51.8 14.4L39.4 2Z"
-            stroke="currentColor"
-            stroke-opacity="0.2"
-            stroke-width="1.5882"
-            stroke-miterlimit="10"
-          ></path>
-        </svg>
-      </div>
-    );
+  const dynamicClassName = (idx: number) => {
+    switch (idx) {
+      case 0:
+      case 3:
+        return "md:grid-cols-3";
+      case 1:
+      case 2:
+      case 4:
+        return "md:grid-cols-2";
+    }
   };
 
   return (
-    <div className="w-full max-w-4xl px-2 py-2 sm:px-0">
+    <div className="w-full max-w-6xl px-2 py-2 sm:px-0">
       <Tab.Group
         onChange={(index) => {
           setSelectedIndex(index);
@@ -130,32 +119,22 @@ export default function TabContainer({ bookmarks }: BookmarkProps) {
                 ""
               )}
             >
-              <ul
-                className={`grid grid-cols-1 ${
-                  idx === 3
-                    ? "md:grid-cols-3"
-                    : idx === 0
-                    ? "md:grid-cols-2"
-                    : "md:grid-cols-1"
-                }  gap-5`}
-              >
+              <ul className={`grid grid-cols-1 ${dynamicClassName(idx)} gap-5`}>
                 {items.length > 0 ? (
                   <>
                     {items?.map((item: any, k: number) => (
                       <>
-                        {idx !== 3 ? (
-                          <div onClick={() => setModalData(item)}>
-                            <Card idx={idx} key={k} data={item} />
-                          </div>
-                        ) : (
+                        {idx !== 3 && idx !== 4 ? (
+                          <Card idx={idx} key={k} data={item} />
+                        ) : idx === 3 ? (
                           <Tool idx={idx} key={k} data={item} />
+                        ) : (
+                          <Book idx={idx} key={k} data={item} />
                         )}
                       </>
                     ))}
                   </>
-                ) : (
-                  <NoArticles />
-                )}
+                ) : null}
               </ul>
             </Tab.Panel>
           ))}

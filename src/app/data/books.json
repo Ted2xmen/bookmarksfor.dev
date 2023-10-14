@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "title": "JavaScript: The Definitive Guide: Master the World's Most-Used Programming Language",
+      "domain": "David Flanagan",
+      "lastUpdate": 2020,
+      "link": "/",
+      "publisher": "O'Reilly Media",
+      "cover": "https://m.media-amazon.com/images/I/51wijnc-Y8L._SY445_SX342_.jpg"
+    },
+    {
+      "title": "Learning JavaScript Design Patterns: A JavaScript and React Developer's Guide 2nd Edition",
+      "domain": "Addy Osmani",
+      "lastUpdate": 2023,
+      "link": "/",
+      "publisher": "O'Reilly Media",
+      "cover": "https://m.media-amazon.com/images/I/81LpyFBbo8L._SY522_.jpg"
+    },
+    {
+      "title": "React Key Concepts: Consolidate your knowledge of React's core features",
+      "domain": "Maximilian Schwarzmuller",
+      "lastUpdate": 2022,
+      "link": "/",
+      "publisher": "Packt",
+      "cover": "https://m.media-amazon.com/images/I/41rgivhpOaL._SX342_SY445_.jpg"
+    },
+    {
+      "title": "Learning TypeScript: Enhance Your Web Development Skills Using Type-Safe JavaScript 1st Edition",
+      "domain": "Josh Goldberg",
+      "lastUpdate": 2022,
+      "link": "/",
+      "publisher": "O'Reilly Media",
+      "cover": "https://m.media-amazon.com/images/I/41XL-xB73PL._SY445_SX342_.jpg"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import TabContainer from "./components/TabContainer";
+import books from "../../src/app/data/books.json";
 
 async function getData() {
   const options = {
@@ -22,6 +23,7 @@ async function getData() {
     const data = await res.json();
     results.push(data);
   }
+  results.push(books);
 
   return results;
 }

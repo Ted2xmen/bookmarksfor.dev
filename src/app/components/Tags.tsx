@@ -47,7 +47,7 @@ const Tags = ({ tags }: TagsProps) => {
 
   return (
     <div className="flex items-center gap-2">
-      {tags.slice(0,3).map((tag: any, key: number) => {
+      {tags?.slice(0, 3).map((tag: any, key: number) => {
         return <Tag tag={tag} key={key} />;
       })}
     </div>

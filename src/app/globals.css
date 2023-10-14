@@ -9,7 +9,7 @@ body {
 }
 
 .title {
-  @apply text-[16px] text-slate-300
+  @apply text-[16px]  text-slate-300
 }
 
 .domain {
